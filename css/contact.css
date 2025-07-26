@@ -1,0 +1,264 @@
+/* ================ CONTACT SECTION STYLES ================ */
+.contactSection {
+  padding: 8rem 10%;
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+  margin-top: 3%;
+}
+
+/* Dynamic particle background */
+.contactSection::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(142, 178, 5, 0.15) 0%, transparent 25%),
+    radial-gradient(circle at 80% 70%, rgba(142, 178, 5, 0.15) 0%, transparent 25%),
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 20%);
+  animation: particleMove 25s linear infinite;
+  z-index: 0;
+}
+
+/* Subtle floating animation */
+@keyframes particleMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-5%, 5%);
+  }
+  50% {
+    transform: translate(5%, -5%);
+  }
+  75% {
+    transform: translate(-5%, -5%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Floating dots decoration */
+.contactSection::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 1px, transparent 1px),
+    radial-gradient(circle at 90% 80%, rgba(255,255,255,0.1) 1px, transparent 1px),
+    radial-gradient(circle at 30% 60%, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 100px 100px;
+  animation: dotsFloat 40s linear infinite;
+  z-index: 0;
+}
+
+@keyframes dotsFloat {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 100px 100px, -100px -100px, 50px -50px;
+  }
+}
+
+/* Form container with glass effect */
+.contactContainer {
+  max-width: 600px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 4rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+}
+
+
+
+
+.contactHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.contactHeader h2 {
+  font-size: 3.2rem;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.contactHeader h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--primary);
+}
+
+.contactHeader p {
+  font-size: 1.6rem;
+  color: #555;
+}
+
+/* Form Styles - Preserved your original styles */
+.registrationForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  position: relative;
+}
+
+.formGroup label {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.formGroup input,
+.formGroup select {
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(142, 178, 5, 0.2);
+}
+
+.checkboxGroup {
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.checkboxGroup input {
+  width: auto;
+}
+
+.checkboxGroup label {
+  font-weight: normal;
+  margin-bottom: 0;
+  font-size: 1.4rem;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  display: none;
+}
+
+.submitButton {
+  padding: 1.5rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitButton::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.submitButton:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(142, 178, 5, 0.3);
+}
+
+.submitButton:focus:not(:active)::after {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 6rem 5%;
+  }
+  
+  .contactContainer {
+    padding: 3rem;
+    margin-top: 15%;
+  }
+  
+  .contactSection::before {
+    animation-duration: 80s;
+  }
+}
+
+@media (max-width: 576px) {
+  .contactContainer {
+    padding: 2rem;
+  }
+  
+  .contactHeader h2 {
+    font-size: 2.8rem;
+  }
+  
+  .formGroup input,
+  .formGroup select {
+    padding: 1.2rem;
+  }
+  
+  .submitButton {
+    padding: 1.2rem;
+  }
+}

@@ -1,0 +1,285 @@
+/* ================ NAVBAR STYLES ================ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 5%;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+/* Logo styles */
+.logo img {
+  height: 40px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+/* Navigation links - Centered in the middle */
+.navLinks {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 2.5rem;
+}
+
+.navLinks a {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: var(--secondary);
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.navLinks a:hover,
+.navLinks a.activeLink {
+  color: var(--primary);
+}
+
+.navLinks a:hover::after,
+.navLinks a.activeLink::after {
+  width: 100%;
+}
+
+/* Right side elements container */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+/* App Icon Styles - Adjusted positioning */
+.app-icon-container {
+  position: relative;
+  margin-right: 1rem; /* Reduced space between icon and button */
+}
+
+.app-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.app-icon i {
+  font-size: 1.6rem;
+}
+
+.app-icon:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.1);
+}
+
+/* App Popup Styles - Fixed positioning */
+.app-popup {
+  position: absolute;
+  top: 100%; /* Changed from bottom: 100% to top: 100% */
+  right: 0;
+  width: 250px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.app-popup.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(10px); /* Changed to show below the icon */
+}
+
+.popup-arrow {
+  position: absolute;
+  top: -10px; /* Changed from bottom to top */
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white; /* Changed from border-top to border-bottom */
+}
+
+.popup-content h4 {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.popup-content p {
+  font-size: 1.4rem;
+  color: var(--secondary);
+  line-height: 1.4;
+}
+
+/* Register button */
+.registerButton {
+  margin-left: 0; /* Removed extra margin since we have the container */
+}
+
+.registerBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  background-color: var(--primary);
+  color: var(--text-light);
+  border-radius: var(--border-radius);
+  font-size: 1.4rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.registerBtn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(42, 127, 98, 0.3);
+}
+
+.registerIcon {
+  font-size: 1.2rem;
+}
+
+/* Mobile Menu Button - Hidden by default */
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.mobileMenuIcon {
+  font-size: 2.4rem;
+  color: var(--secondary);
+  transition: all 0.3s ease;
+}
+
+/* Mobile Menu Overlay */
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobileMenuOverlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile Menu Content */
+.mobileMenuContent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 85%;
+  max-width: 320px;
+  height: 100%;
+  background-color: var(--white);
+  padding: 8rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.mobileMenuOverlay.active .mobileMenuContent {
+  transform: translateX(0);
+}
+
+/* Mobile Links */
+.mobileLink {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--secondary);
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.mobileLink:hover,
+.mobileLink.activeLink {
+  color: var(--primary);
+  padding-left: 1rem;
+}
+
+/* Mobile Register Button */
+.mobileRegisterBtn {
+  margin-top: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.2rem;
+  background-color: var(--primary);
+  color: var(--text-light);
+  border-radius: var(--border-radius);
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.mobileRegisterBtn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Close icon when menu is open */
+.mobileMenuButton.active .mobileMenuIcon {
+  color: var(--primary);
+}
+
+/* Body no-scroll when menu is open */
+body.noScroll {
+  overflow: hidden;
+}
+

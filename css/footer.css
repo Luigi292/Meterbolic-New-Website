@@ -1,0 +1,191 @@
+/* ================ FOOTER STYLES ================ */
+.footer {
+  background-color: white;
+  color: black;
+  padding: 8rem 5% 4rem;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  
+}
+
+.footer-container {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  margin-bottom: 6rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-brand {
+  flex: 0 1 25%;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+}
+
+.footer-brand img {
+  width: 180px;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+.footer-description {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: black;
+  margin: 0 0 2rem 0;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.social-link {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 1.8rem;
+  transition: var(--transition);
+}
+
+.social-link:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+}
+
+.footer-links {
+  flex: 0 1 50%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8rem;
+  justify-items: center;
+  margin-right: 10%;
+}
+
+.link-column {
+  flex: 1;
+  min-width: 150px;
+}
+
+.link-column h4 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.link-column ul {
+  list-style: none;
+}
+
+.link-column li {
+  margin-bottom: 1.5rem;
+}
+
+.link-column a {
+  font-size: 1.6rem;
+  color: black;
+  transition: var(--transition);
+}
+
+.link-column a:hover {
+  color: var(--primary);
+  padding-left: 5px;
+}
+
+.footer-contact {
+  flex: 0 1 25%;
+  min-width: 250px;
+}
+
+.footer-contact h4 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-contact p {
+  font-size: 1.6rem;
+  color: black;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.footer-contact i {
+  margin-top: 0.3rem;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; /* Align vertically */
+  gap: 2rem;            /* Give some space between items */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.footer-legal p {
+  margin: 0;                     /* Remove default bottom margin */
+  display: inline-flex;          /* Make it flex-friendly */
+  align-items: center;           /* Vertically align text */
+  font-size: 1.4rem;
+  color: black;
+}
+
+.legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+
+.legal-links a {
+  font-size: 1.4rem;
+  color: black;
+  transition: var(--transition);
+}
+
+.legal-links a:hover {
+  color: var(--primary);
+}
+
+.confidential {
+  font-size: 1.2rem;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Meterbolic</title>
+  <meta name="description" content="Contact Meterbolic for advanced metabolic testing">
+  <link rel="icon" href="images/favicon.ico">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.cdnfonts.com/css/arial" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/corporate.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+<body>
+
+  <div class="container">
+
+
+
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/meterbolic_logo.jpg" alt="Meterbolic Logo" width="180">
+    </a>
+  </div>
+
+  <div class="navLinks">
+    <a href="index.html#home" class="activeLink">Home</a>
+    <a href="index.html#what-is-meterbolic">About Meterbolic</a>
+    <a href="index.html#mission">Mission</a>
+    <a href="index.html#solution">Solution</a>
+    <a href="index.html#testing">Our Tests</a>
+    <a href="index.html#partnership">Partnership</a>
+    <a href="#team">Team</a>
+  </div>
+
+  <div class="navbar-right">
+    <div class="app-icon-container">
+      <div class="app-icon" id="appIcon">
+        <i class="fas fa-mobile-alt"></i>
+      </div>
+      <div class="app-popup" id="appPopup">
+        <div class="popup-content">
+          <div class="popup-arrow"></div>
+          <h4>Meterbolic Mobile App</h4>
+          <p>Coming in Q4 2025 - Transform your metabolic health on the go!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="registerButton">
+      <a href="contact.html" class="registerBtn">
+        <i class="fas fa-user-plus registerIcon"></i>
+        Register with Us
+      </a>
+    </div>
+  </div>
+
+  <button class="mobileMenuButton" id="mobileMenuButton" aria-label="Toggle menu" aria-expanded="false">
+    <i class="fas fa-bars mobileMenuIcon"></i>
+  </button>
+
+  <div class="mobileMenuOverlay" id="mobileMenuOverlay">
+    <div class="mobileMenuContent">
+      <a href="#home" class="mobileLink activeLink">Home</a>
+      <a href="#what-is-meterbolic" class="mobileLink">About Meterbolic</a>
+      <a href="#mission" class="mobileLink">Mission</a>
+      <a href="#solution" class="mobileLink">Solution</a>
+      <a href="#testing" class="mobileLink">Our Tests</a>
+      <a href="#partnership" class="mobileLink">Partnership</a>
+      <a href="#team" class="mobileLink">Team</a>
+      <a href="contact.html" class="mobileRegisterBtn">
+        <i class="fas fa-user-plus registerIcon"></i>
+        Register with Us
+      </a>
+    </div>
+  </div>
+</nav>
+
+
+
+    <!-- Contact Form Section -->
+    <section class="contactSection">
+      <div class="contactContainer">
+        <div class="contactHeader">
+          <h2>Join Our Waitlist</h2>
+          <p>Be the first to know when we launch our platform</p>
+        </div>
+        
+        <form id="registrationForm" class="registrationForm" action="send-email.php" method="POST">
+          <input type="hidden" name="teamEmail" value="luigi.maretto@meterbolic.com">
+          
+          <!-- Form Fields -->
+          <div class="formGroup">
+            <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
+            <div class="error-message" id="fullNameError"></div>
+          </div>
+
+          <div class="formGroup">
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+            <div class="error-message" id="emailError"></div>
+          </div>
+          
+          <div class="formGroup">
+            <label for="interest">What interests you about Meterbolic?</label>
+            <select id="interest" name="interest" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="Metabolic Testing">Metabolic Testing</option>
+              <option value="Health Optimization">Health Optimization</option>
+              <option value="Longevity">Longevity</option>
+              <option value="Other">Other</option>
+            </select>
+            <div class="error-message" id="interestError"></div>
+          </div>
+          
+          <div class="formGroup checkboxGroup">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">I agree to receive emails from Meterbolic</label>
+            <div class="error-message" id="consentError"></div>
+          </div>
+          
+          <button type="submit" class="submitButton" id="waitlistSubmitBtn">
+            Submit Registration
+          </button>
+        </form>
+      </div>
+    </section>
+
+
+
+
+<!-- FOOTER -->
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <img src="images/meterbolic_logo.jpg" alt="Meterbolic Logo" width="180">
+            <p class="footer-description">
+              Advanced metabolic testing solutions for optimal corporate health and performance.
+            </p>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/Meterbolic/" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://x.com/meterbolic" aria-label="X" class="social-link"><i class="fab fa-x"></i></a>
+              <a href="https://www.linkedin.com/company/meterbolic-org/posts/?feedView=all" aria-label="LinkedIn" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/meterbolic/?hl=en" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          
+          <div class="footer-links">
+            <div class="link-column">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="index.html#what-is-meterbolic">About Us</a></li>
+                <li><a href="index.html#mission">Our Mission</a></li>
+                <li><a href="index.html#team">Our Team</a></li>
+              </ul>
+            </div>
+            
+            <div class="link-column">
+              <h4>Solutions</h4>
+              <ul>
+                <li><a href="index.html#solution">How It Works</a></li>
+                <li><a href="index.html#testing">Our Tests</a></li>
+                <li><a href="index.html#partnership">Get Started</a></li>
+              </ul>
+            </div>
+            
+            <div class="link-column">
+              <h4>Support</h4>
+              <ul>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="faq.html#testing-faqs">Testing Questions</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <div class="footer-legal">
+            <div class="legal-links">
+              <a href="privacy.html">Privacy Policy</a>
+              <a href="terms.html">Terms</a>
+              <a href="cookies.html">Cookies</a>
+            </div>
+          </div>
+          <p>&copy; <span id="currentYear"></span> Meterbolic. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    
+
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/navbar.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/footer.js"></script>
+</body>
+</html>
